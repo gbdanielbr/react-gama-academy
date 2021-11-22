@@ -1,7 +1,7 @@
-import Home from "./views/Home"
+import ReactRoutes from "./routes"
 
 function App() {
-  return <Home />
+  return <ReactRoutes />
 }
 
 export default App;
