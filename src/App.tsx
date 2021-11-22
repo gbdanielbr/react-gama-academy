@@ -1,9 +1,7 @@
+import Home from "./views/Home"
+
 function App() {
-  return (
-    <div className="App">
-      <h1>Hello Gama!</h1>
-    </div>
-  );
+  return <Home />
 }
 
 export default App;
