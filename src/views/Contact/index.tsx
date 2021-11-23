@@ -11,10 +11,10 @@ interface IData {
 const Contact: React.FC = () => {
   const [ data, setData ] = useState<IData>({} as IData);
 
-  const handleSubmit = useCallback( (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleSubmit = useCallback( (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     api.post('', data);
-  }, [] )
+  }, [data] )
 
   return (
     <Container>
