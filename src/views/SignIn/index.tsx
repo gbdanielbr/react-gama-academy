@@ -4,11 +4,14 @@ import { Container } from './style';
 const SignIn: React.FC = () => {
   return (
     <Container>
-      <form onSubmit={ () => alert('Test')}>
-        <input type="text" placeholder="Informe seu nome"/>
-        <input type="text" placeholder="Informe seu email"/>
-        <input type="submit" value="Entrar"/>
-      </form>
+      <div className="card">
+        <h5>Login</h5>
+        <form onSubmit={ () => alert('Test')}>
+          <input type="text" placeholder="Usuário"/>
+          <input type="password" placeholder="Senha"/>
+          <input type="submit" value="Entrar"/>
+        </form>
+      </div>
     </Container>
   );
 }
