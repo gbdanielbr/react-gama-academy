@@ -10,10 +10,15 @@ interface IData {
 
 const Contact: React.FC = () => {
   const [ data, setData ] = useState<IData>({} as IData);
+  const [ submit, setSubmit ] = useState(false);
 
   const handleSubmit = useCallback( (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    api.post('', data);
+    api.post('', data).then( response => {
+      if (response.status === 200){
+        setSubmit(true);
+      }
+    });
   }, [data] )
 
   return (
@@ -24,16 +29,30 @@ const Contact: React.FC = () => {
         <br />
         Email: {data?.email}
         <div className="card">
-          <form onSubmit={ handleSubmit }>
-            <input type="text" placeholder="nome" onChange={ e => setData({ ...data, name: e.target.value }) }/>
-            <input type="text" placeholder="email" onChange={ e => setData({ ...data, email: e.target.value }) }/>
-            <input type="submit" placeholder="cadastrar"/>
-          </form>
+          {submit ? (
+            <div>
+              <h1>Obrigado pelo envio dos dados</h1>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="nome"
+                onChange={e => setData({ ...data, name: e.target.value })}
+              />
+              <input
+                type="text"
+                placeholder="email"
+                onChange={e => setData({ ...data, email: e.target.value })}
+              />
+              <input type="submit" placeholder="cadastrar" />
+            </form>
+          )}
         </div>
         <Link to="/">Voltar para Home</Link>
       </div>
     </Container>
-  );
+  )
 }
 
 export default Contact;

@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: lightgreen;
+  background-color: green;
   color: #fff;
 
   .form-wrapper{
@@ -17,10 +17,9 @@ export const Container = styled.div`
       background-color: #fff;
       padding: 1.2rem;
       border-radius: 1rem;
-
+      color: darkgreen;
       form{
         display: grid;
-
         input{
           margin: .7rem 0;
         }
