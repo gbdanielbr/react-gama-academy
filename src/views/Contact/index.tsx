@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, FormEvent } from 'react';
 import { Link } from "react-router-dom"
 import { Container } from './style';
+import { api } from '../../services/api'
 
 interface IData {
   name: string;
@@ -10,6 +11,11 @@ interface IData {
 const Contact: React.FC = () => {
   const [ data, setData ] = useState<IData>({} as IData);
 
+  const handleSubmit = useCallback( (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    api.post('', data);
+  }, [] )
+
   return (
     <Container>
       <div className="form-wrapper">
@@ -18,7 +24,7 @@ const Contact: React.FC = () => {
         <br />
         Email: {data?.email}
         <div className="card">
-          <form onSubmit={() => {}}>
+          <form onSubmit={ handleSubmit }>
             <input type="text" placeholder="nome" onChange={ e => setData({ ...data, name: e.target.value }) }/>
             <input type="text" placeholder="email" onChange={ e => setData({ ...data, email: e.target.value }) }/>
             <input type="submit" placeholder="cadastrar"/>
