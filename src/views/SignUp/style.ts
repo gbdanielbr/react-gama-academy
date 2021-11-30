@@ -41,6 +41,7 @@ export const Container = styled.div`
           max-width: 5rem;
           transition: .5s;
           &:hover{
+            color: #fff;
             background: #8c52e5;
           }
         }

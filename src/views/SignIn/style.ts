@@ -31,6 +31,7 @@ export const Container = styled.div`
           margin: .5rem 0 0 0;
         }
         input[type="submit"]{
+          font-weight: bold;
           text-shadow: 2px 1px 0px rgba(117,117,117,0.22);
           cursor: pointer;
           border: none;
@@ -40,6 +41,7 @@ export const Container = styled.div`
           max-width: 5rem;
           transition: .5s;
           &:hover{
+            color: #fff;
             background: #8c52e5;
           }
         }

@@ -1,6 +1,6 @@
 import React, { useState, useCallback, FormEvent } from 'react'
 import { toast } from 'react-toastify'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { Container } from './style'
 import { api } from '../../services/api'
 
@@ -71,6 +71,7 @@ const SignUp: React.FC = () => {
           />
           <input type="submit" value="Enviar" />
         </form>
+        <Link to="/signup">Já tem uma conta? Entre aqui</Link>
       </div>
     </Container>
   )
