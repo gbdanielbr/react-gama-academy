@@ -46,7 +46,7 @@ const SignUp: React.FC = () => {
       return (
         <Container>
           <div className="card">
-            <h5>Você está sendo redirecionado ;)</h5>
+            <h5>Redirecionando...</h5>
           </div>
         </Container>
       )
@@ -69,9 +69,9 @@ const SignUp: React.FC = () => {
             placeholder="Senha"
             onChange={ e => setData({...data, password: e.target.value})}   
           />
-          <input type="submit" value="Enviar" />
+          <input type="submit" value="ENVIAR" />
         </form>
-        <Link to="/signup">Já tem uma conta? Entre aqui</Link>
+        <Link to="/signin">Já tem uma conta? Entre aqui.</Link>
       </div>
     </Container>
   )

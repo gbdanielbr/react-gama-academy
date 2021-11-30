@@ -1,5 +1,6 @@
 import React, { useState, useCallback, FormEvent } from 'react'
 import { toast } from 'react-toastify'
+import Loader from '../../components/Loader'
 import { useNavigate, Link } from 'react-router-dom'
 import { Container } from './style'
 import { api } from '../../services/api'
@@ -11,9 +12,7 @@ interface IData {
 
 const SignIn: React.FC = () => {
   const [data, setData] = useState<IData>({} as IData);
-
   const [ load, setLoad ] = useState(0);
-
   const navigate = useNavigate();
 
   const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
@@ -37,18 +36,12 @@ const SignIn: React.FC = () => {
     return (
       <Container>
         <div className="card">
-          <h5>Aguarde</h5>
+          <h5>Aguarde...</h5>
         </div>
       </Container>
       )
   } else if (load === 2) {
-      return (
-        <Container>
-          <div className="card">
-            <h5>Você está sendo redirecionado ;)</h5>
-          </div>
-        </Container>
-      )
+      return <Loader />
   } 
 
   return (
@@ -64,9 +57,9 @@ const SignIn: React.FC = () => {
             placeholder="Senha"
             onChange={ e => setData({...data, password: e.target.value})}   
           />
-          <input type="submit" value="Entrar" />
+          <input type="submit" value="ENTRAR" />
         </form>
-        <Link to="/signup">Não tem uma conta? Cadastre-se</Link>
+        <Link to="/signup">Não tem uma conta? Cadastre-se.</Link>
       </div>
     </Container>
   )

@@ -6,9 +6,11 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background: #8c52e5;
+  background: rgb(112,37,201);
+  background: radial-gradient(circle, rgba(112,37,201,0.6879932392879027) 0%, rgba(126,0,255,0.5843517827052696) 87%, rgba(134,28,206,0.5591416986716562) 100%);
 
   .card{
+    display: grid;
     background: #f9f9f9;
     max-width: 18.75rem;
     border-radius: 1rem;
@@ -19,6 +21,13 @@ export const Container = styled.div`
       font-size: 1.3rem;
       color: #8c52e9;
       text-shadow: 2px 1px 0px rgba(117,117,117,0.22);
+    }
+    a{
+      text-decoration: none;
+      text-align: center;
+      color: #8c52e5;
+      font-family: 'Roboto';
+      margin-top: .8rem;
     }
       form{
         text-align: center;
@@ -31,8 +40,7 @@ export const Container = styled.div`
           margin: .5rem 0 0 0;
         }
         input[type="submit"]{
-          font-weight: bold;
-          text-shadow: 2px 1px 0px rgba(117,117,117,0.22);
+          font-size: 75%;
           cursor: pointer;
           border: none;
           background: #68de5a;
@@ -40,7 +48,9 @@ export const Container = styled.div`
           border-radius: .8rem;
           max-width: 5rem;
           transition: .5s;
+          margin-top: .8rem;
           &:hover{
+            font-weight: bold;
             color: #fff;
             background: #8c52e5;
           }
