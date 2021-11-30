@@ -5,6 +5,7 @@ import Home from "./views/Home";
 import Contact from "./views/Contact";
 import SignUp from "./views/SignUp";
 import SignIn from "./views/SignIn";
+import Dashboard from "./views/Dash"
 
 const ReactRoutes: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const ReactRoutes: React.FC = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

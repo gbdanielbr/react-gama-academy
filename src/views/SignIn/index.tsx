@@ -17,11 +17,13 @@ const SignIn: React.FC = () => {
   const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoad(true);
-    api.post('users', data).then(
-      response => { 
-        toast.success('Cadastro realizado com sucesso!', {
+    api.post('session', data).then(
+      response => {
+        const sessionToken = JSON.stringify(response.data.token)
+        localStorage.setItem('@userLoginToken', sessionToken)
+        toast.success('Login realizado com sucesso!', {
           hideProgressBar: false,
-          onClose: () => navigate('/signin')
+          onClose: () => navigate('/dashboard')
         })
       }
     ).catch( e => {
