@@ -1,5 +1,6 @@
 import React, { useState, useCallback, FormEvent } from 'react'
 import { toast } from 'react-toastify'
+import Loader from '../../components/Loader'
 import { useNavigate, Link } from 'react-router-dom'
 import { Container } from './style'
 import { api } from '../../services/api'
@@ -12,17 +13,13 @@ interface IData {
 
 const SignUp: React.FC = () => {
   const [data, setData] = useState<IData>({} as IData);
-
-  const [ load, setLoad ] = useState(0);
-
+  const [ load, setLoad ] = useState(false);
   const navigate = useNavigate();
-
   const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoad(1);
+    setLoad(true);
     api.post('users', data).then(
       response => {
-        setTimeout( () => setLoad(2), 1000) 
         toast.success('Cadastro realizado com sucesso!', {
           hideProgressBar: false,
           onClose: () => navigate('/signin')
@@ -30,27 +27,17 @@ const SignUp: React.FC = () => {
       }
     ).catch( e => {
       toast.error('Oops.. Algo deu errado!');
-      setLoad(0);
+      setLoad(false);
     })
   }, [data, navigate])
 
-  if(load === 1){
+  if (load) {
     return (
       <Container>
-        <div className="card">
-          <h5>Aguarde</h5>
-        </div>
+        <Loader />
       </Container>
-      )
-  } else if (load === 2) {
-      return (
-        <Container>
-          <div className="card">
-            <h5>Redirecionando...</h5>
-          </div>
-        </Container>
-      )
-  } 
+    )
+  }
 
   return (
     <Container>

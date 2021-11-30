@@ -1,15 +1,26 @@
-import React from 'react';
-
-import { Container } from './style';
-
-// import { Container } from './styles';
+import React from 'react'
+import Lottie from 'react-lottie'
+import animation from '../../animations/76060-loader.json'
+import { Container } from './style'
 
 const Loader: React.FC = () => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animation,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  }
+
   return (
     <Container>
-      <h1>Aguarde...</h1>
+      <div>
+        <h5 className='text'>Aguarde...</h5>
+        <Lottie options={defaultOptions} height={200} width={200} />
+      </div>
     </Container>
   )
 }
 
-export default Loader;
+export default Loader
