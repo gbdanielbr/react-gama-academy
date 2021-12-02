@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import { Container } from './style';
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'

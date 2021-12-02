@@ -1,14 +1,13 @@
 import React from 'react';
+import { FooterDiv } from './style';
 
-// import { Container } from './styles';
+import FooterLogo from '../../assets/img/footerlogo.png'
 
 const Footer: React.FC = () => {
   return (
-    <div>
-      <footer>
-        <p>Rodapé</p>
-      </footer>
-    </div>
+      <FooterDiv>
+        <img src={ FooterLogo } alt="footer logo" />
+      </FooterDiv>
   )
 }
 

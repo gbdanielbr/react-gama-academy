@@ -4,6 +4,9 @@ import Loader from '../../components/Loader'
 import { useHistory, Link } from 'react-router-dom'
 import { Container } from './style'
 import { api } from '../../services/api'
+import Nav from '../../components/Nav'
+import Footer from '../../components/Footer'
+import { FooterDiv } from '../../components/Footer/style'
 
 interface IData {
   email: string
@@ -41,23 +44,29 @@ const SignIn: React.FC = () => {
   }
 
   return (
-    <Container>
-      <div className="card">
-        <h5>Login</h5>
-        <form onSubmit={handleSubmit}>
-          <input type="text" 
-            placeholder="E-mail" 
-            onChange={ e => setData({...data, email: e.target.value})} 
-          />
-          <input type="password" 
-            placeholder="Senha"
-            onChange={ e => setData({...data, password: e.target.value})}   
-          />
-          <input type="submit" value="ENTRAR" />
-        </form>
-        <Link to="/signup">Não tem uma conta? Cadastre-se.</Link>
-      </div>
-    </Container>
+    <>
+      <Nav />
+      <Container>
+        <div className="card">
+          <h5>Login</h5>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="E-mail"
+              onChange={e => setData({ ...data, email: e.target.value })}
+            />
+            <input
+              type="password"
+              placeholder="Senha"
+              onChange={e => setData({ ...data, password: e.target.value })}
+            />
+            <input type="submit" value="ENTRAR" />
+          </form>
+          <Link to="/signup">Não tem uma conta? Cadastre-se.</Link>
+        </div>
+      </Container>
+      <Footer />
+    </>
   )
 }
 

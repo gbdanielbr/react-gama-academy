@@ -5,12 +5,11 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
-  background: rgb(140, 105, 212);
+  height: 80vh;
   background: linear-gradient(
     0deg,
-    rgba(140, 105, 212, 0.8672649479713761) 0%,
-    rgba(102, 8, 212, 0.836452623041404) 100%
+    rgba(102, 8, 212, 0.696452623041404) 0%,
+    rgba(140, 105, 212, 0.5672649479713761) 110%
   );
 
   .card {
@@ -63,7 +62,6 @@ export const Container = styled.div`
         margin-top: 2rem;
 
         &:hover {
-          font-weight: bold;
           background: rgba(140, 105, 212, 0.8672649479713761);
         }
       }
