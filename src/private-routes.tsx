@@ -1,7 +1,7 @@
-import { Route, Link } from 'react-router-dom'
-import jwt from 'jsonwebtoken'
+import { Route, Redirect } from 'react-router-dom'
+import jwt_decode from 'jwt-decode'
 
-const PrivateRoute: any = ({ component: Component, path: Path, ...rest }: any) => {
+const PrivateRoute = ({ component: Component, path: Path, ...rest }: any) => {
   const isLoggedIn: string | null = localStorage.getItem('@userLoginToken')
 
   const isSectionActive: any = () => {
@@ -9,7 +9,7 @@ const PrivateRoute: any = ({ component: Component, path: Path, ...rest }: any) =
       return false
     } else {
       const onlyToken = isLoggedIn
-      const tokenPayload: any = jwt.decode(onlyToken)
+      const tokenPayload: any = jwt_decode(onlyToken)
       const expSeconds = tokenPayload.exp
       const timeNow = Date.now() / 1000
 
@@ -17,14 +17,10 @@ const PrivateRoute: any = ({ component: Component, path: Path, ...rest }: any) =
     }
   }
 
-  return (
-
-      <Route 
-      {...rest} 
-      render={ () => ( //apaguei o props do render e do Component por conta de um erro de tipagem
-        isSectionActive() ? (<Component />) : (<Link to="/" />)
-      )}
-      />
+  return(
+      <Route {...rest} render={ props => (
+        isSectionActive() ? <Component {...props} /> : <Redirect to="/" />
+      )}/>
   )
 }
 

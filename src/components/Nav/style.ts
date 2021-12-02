@@ -1,11 +1,11 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
+export const NavBar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100vh;
+  height: 10vh;
   background: rgb(140, 105, 212);
   background: linear-gradient(
     0deg,

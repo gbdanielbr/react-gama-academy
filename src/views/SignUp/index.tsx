@@ -1,7 +1,7 @@
 import React, { useState, useCallback, FormEvent } from 'react'
 import { toast } from 'react-toastify'
 import Loader from '../../components/Loader'
-import { useNavigate, Link } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import { Container } from './style'
 import { api } from '../../services/api'
 
@@ -14,7 +14,7 @@ interface IData {
 const SignUp: React.FC = () => {
   const [data, setData] = useState<IData>({} as IData);
   const [ load, setLoad ] = useState(false);
-  const navigate = useNavigate();
+  const history = useHistory();
   const handleSubmit = useCallback((e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoad(true);
@@ -22,14 +22,14 @@ const SignUp: React.FC = () => {
       response => {
         toast.success('Cadastro realizado com sucesso!', {
           hideProgressBar: false,
-          onClose: () => navigate('/signin')
+          onClose: () => history.push('/signin')
         })
       }
     ).catch( e => {
       toast.error('Oops.. Algo deu errado!');
       setLoad(false);
     })
-  }, [data, navigate])
+  }, [data, history])
 
   if (load) {
     return (
