@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/react-gama-academy/static/js/main.f68d51b1.chunk.js",
+    "main.js.map": "/react-gama-academy/static/js/main.f68d51b1.chunk.js.map",
+    "runtime-main.js": "/react-gama-academy/static/js/runtime-main.f29e5d23.js",
+    "runtime-main.js.map": "/react-gama-academy/static/js/runtime-main.f29e5d23.js.map",
+    "static/css/2.58a45539.chunk.css": "/react-gama-academy/static/css/2.58a45539.chunk.css",
+    "static/js/2.1fbec83b.chunk.js": "/react-gama-academy/static/js/2.1fbec83b.chunk.js",
+    "static/js/2.1fbec83b.chunk.js.map": "/react-gama-academy/static/js/2.1fbec83b.chunk.js.map",
+    "index.html": "/react-gama-academy/index.html",
+    "static/css/2.58a45539.chunk.css.map": "/react-gama-academy/static/css/2.58a45539.chunk.css.map",
+    "static/js/2.1fbec83b.chunk.js.LICENSE.txt": "/react-gama-academy/static/js/2.1fbec83b.chunk.js.LICENSE.txt",
+    "static/media/footerlogo.3729b089.png": "/react-gama-academy/static/media/footerlogo.3729b089.png",
+    "static/media/navlogo.d5766aef.png": "/react-gama-academy/static/media/navlogo.d5766aef.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f29e5d23.js",
+    "static/css/2.58a45539.chunk.css",
+    "static/js/2.1fbec83b.chunk.js",
+    "static/js/main.f68d51b1.chunk.js"
+  ]
+}
