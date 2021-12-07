@@ -6,7 +6,6 @@ import { Container } from './style'
 import { api } from '../../services/api'
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
-import { FooterDiv } from '../../components/Footer/style'
 
 interface IData {
   name: string
@@ -23,6 +22,7 @@ const SignUp: React.FC = () => {
     setLoad(true);
     api.post('users', data).then(
       response => {
+        console.log(response)
         toast.success('Cadastro realizado com sucesso!', {
           hideProgressBar: false,
           onClose: () => history.push('/signin')
@@ -36,9 +36,7 @@ const SignUp: React.FC = () => {
 
   if (load) {
     return (
-      <Container>
         <Loader />
-      </Container>
     )
   }
 

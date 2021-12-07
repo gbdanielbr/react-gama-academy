@@ -6,7 +6,6 @@ import { Container } from './style'
 import { api } from '../../services/api'
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
-import { FooterDiv } from '../../components/Footer/style'
 
 interface IData {
   email: string
@@ -37,9 +36,7 @@ const SignIn: React.FC = () => {
 
   if (load) {
     return (
-      <Container>
         <Loader />
-      </Container>
     )
   }
 

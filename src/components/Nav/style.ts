@@ -24,12 +24,12 @@ export const NavBar = styled.nav`
       text-decoration: none;
       padding: .5rem;
       text-shadow: 0.2px 0.2px 1px rgba(102, 8, 212, .9);
-      color: rgb(220, 185, 282);
-      transition: .3s;
+      color: #eee;
+      transition: .2s;
 
       &:hover{
-        font-weight: lighter;
-        color: rgba(102, 8, 212, 0.836452623041404);
+        color: cyan;
+        text-shadow: 0px 0px 1px rgba(102, 8, 212, 1);
       }
     }
   }

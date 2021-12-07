@@ -16,8 +16,8 @@ const Loader: React.FC = () => {
   return (
     <Container>
       <div>
-        <h5 className='text'>Aguarde...</h5>
         <Lottie options={defaultOptions} height={200} width={200} />
+        <h5 className='text'>Aguarde...</h5>
       </div>
     </Container>
   )
